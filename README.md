@@ -18,6 +18,7 @@
     e. comment: the comment type of column will be ignored in converting
     f. empty: empty type column will be int
 5. examples:
+
   id | 触发类型 | 触发id | 奖励 | 备注 | 其它
   -------- | :------------: | :------------: | :------------------:| :------------------:| :------------------:
   id |trigger_type|trigger_id|reward|comment|extra
