@@ -1,5 +1,7 @@
 import csv
 
+def file_ext():
+	return 'csv'
 def create_data_tables(csv_file):
 	csvReader = csv.reader(file(csv_file, 'rb'))
 	data_tables = []

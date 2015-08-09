@@ -62,3 +62,21 @@ python ./convert.py -file ../testdata/reward.csv -out_dir ../testdata -if csv -o
 python ./convert.py -dir ../testdata -out_dir ../testdata -if csv -of json
 
 ```
+
+
+#command line usage:
+
+```text
+  usage: python ./convert.py -if input_format -of output_format -file input_file -out_dir lua_dir
+  python ./convert_csv_to_lua.py -if input_format -of output_format -dir csv_dir -out_dir lua_dir
+
+  options:  
+    -if:    input file format : csv or excel
+    -of:    output file format lua,json
+    -dir:     convert files in dir
+    -file:    convert file
+    -out_dir: the dir of output files
+    -h print: this message  
+
+```
+

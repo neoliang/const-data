@@ -37,7 +37,7 @@ def print_help():
 	python ./convert_csv_to_lua.py -if input_format -of output_format -dir csv_dir -out_dir lua_dir
 
 	options:  
-		-if: 	  input file format : csv or excel, current only support csv
+		-if: 	  input file format : csv or excel
 		-of: 	  output file format lua,json
 		-dir: 	  convert files in dir
 		-file: 	  convert file
@@ -70,6 +70,7 @@ for x in range(0,argn):
 src_dir = os.path.dirname( os.path.realpath(__file__) )
 #try:
 reader = data_reader.reader[input_format].create_data_tables
+input_file_ext = data_reader.reader[input_format].file_ext()
 out_gen = generater.language[output_format]
 if csv_file != None:
 	csv_file = os.path.join(src_dir,csv_file)
@@ -80,7 +81,7 @@ if csv_file != None:
 elif csv_dir != None:
 	if out_dir == None:
 		out_dir = os.path.dirname(os.path.realpath(csv_dir))
-	convert_dirs(csv_dir,out_dir,reader,out_gen,input_format)
+	convert_dirs(csv_dir,out_dir,reader,out_gen,input_file_ext)
 else:
 	raise Exception("")
 # except Exception, e:
