@@ -16,7 +16,7 @@ def data_file_to_lua(csv_file,lua_file,reader,out_gen):
 		print 'convert ',data_name,'succ'
 		with open(lua_file,'wb') as tmp:
 			tmp.write(luastr)
-	const_data.convert(csv_file,reader,out_gen.create_gen(on_lua_gen_suc))
+	const_data.convert(csv_file,reader(csv_file),out_gen.create_gen(on_lua_gen_suc))
 
 
 def convert_dirs(csv_dir,out_dir,reader,out_gen,file_ext):
@@ -68,20 +68,20 @@ for x in range(0,argn):
 			output_format = arg
 
 src_dir = os.path.dirname( os.path.realpath(__file__) )
-try:
-	reader = data_reader.reader[input_format].create_reader
-	out_gen = generater.language[output_format]
-	if csv_file != None:
-		csv_file = os.path.join(src_dir,csv_file)
-		if out_dir == None:
-			out_dir = os.path.dirname(os.path.realpath(csv_file))
-		lua_file = os.path.join(out_dir,os.path.basename(csv_file).split('.')[0]) + out_gen.file_ext()
-		data_file_to_lua(csv_file,lua_file,reader,out_gen)
-	elif csv_dir != None:
-		if out_dir == None:
-			out_dir = os.path.dirname(os.path.realpath(csv_dir))
-		convert_dirs(csv_dir,out_dir,reader,out_gen,input_format)
-	else:
-		raise Exception("")
-except Exception, e:
-	print_help()
+#try:
+reader = data_reader.reader[input_format].create_data_tables
+out_gen = generater.language[output_format]
+if csv_file != None:
+	csv_file = os.path.join(src_dir,csv_file)
+	if out_dir == None:
+		out_dir = os.path.dirname(os.path.realpath(csv_file))
+	lua_file = os.path.join(out_dir,os.path.basename(csv_file).split('.')[0]) + out_gen.file_ext()
+	data_file_to_lua(csv_file,lua_file,reader,out_gen)
+elif csv_dir != None:
+	if out_dir == None:
+		out_dir = os.path.dirname(os.path.realpath(csv_dir))
+	convert_dirs(csv_dir,out_dir,reader,out_gen,input_format)
+else:
+	raise Exception("")
+# except Exception, e:
+# 	print e

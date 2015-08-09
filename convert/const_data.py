@@ -8,22 +8,14 @@ import types
 import sys
 
 
-def get_data_desc(data_reader):
+def get_data_desc(data_tables):
+	if len(data_tables) < 3:
+		raise Exception("data error")
+	
 	dic = []
-	dump_var = 0
-	columnNames = []
-	columnTypes = []
-	while 1:
-		try:
-			row = data_reader.next()
-			if data_reader.line_num == 2:
-				columnNames = row
-			elif data_reader.line_num == 3:
-				columnTypes = row
-			elif data_reader.line_num > 3:
-				break
-		except StopIteration:
-			break
+	columnNames = data_tables[1]
+	columnTypes = data_tables[2]
+
 	for i, name_type in enumerate(zip(columnNames, columnTypes)):
 		fname, ftype = name_type
 		var_name = fname
@@ -80,29 +72,24 @@ def get_data_dic_for_row(row,dataDesc):
 		data_dic[data_desc['var_name']] = data
 	return data_dic
 
-def get_datas(data_reader,dataDesc,dbName):
+def get_datas(data_tables,dataDesc,dbName):
 	data_list = []
-	while True:
-		try:
-			row = data_reader.next()
-			if data_reader.line_num <= 3:
-				continue
-			rowdesc = get_data_dic_for_row(row,dataDesc)
-			data_list.append(rowdesc)
-		except StopIteration:
-			break
+	for i in range(3,len(data_tables)):
+		row = data_tables[i]
+		rowdesc = get_data_dic_for_row(row,dataDesc)
+		data_list.append(rowdesc)
 	return data_list
 
-def convert(filePath,fileReader,generate):
+def convert(filePath,data_tables,generate):
 	file_name = None
 	data_desc = None
 	try:
 		data_file_name = os.path.split(filePath)[1];
 		file_name = data_file_name.split('.')[0];
-		data_desc = get_data_desc(fileReader(filePath))
+		data_desc = get_data_desc(data_tables)
 	except Exception, e:
 		print 'convert ',filePath ,'failed'
 		raise
 	
-	data_list = get_datas(fileReader(filePath),data_desc,file_name)
+	data_list = get_datas(data_tables,data_desc,file_name)
 	generate(data_list,file_name)
