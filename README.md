@@ -37,7 +37,7 @@
 
   a. the type of id-column is int because it's empty
 
-# convert csv file to lua file
+# converting csv file to lua file
 
 ```python
 #convert one csv file
@@ -50,7 +50,7 @@ python ./convert.py -dir ../testdata -out_dir ../testdata -if csv -of lua
 
 ```
 
-# convert csv file to json file
+# converting csv file to json file
 
 ```python
 #convert one csv file
@@ -63,6 +63,15 @@ python ./convert.py -dir ../testdata -out_dir ../testdata -if csv -of json
 
 ```
 
+#converting excel to other files
+
+1.the command line is almost same as convert csv excpe the option -if is excel
+
+2.you must install xlrd using pip as following:
+
+```pyton
+pip install xlrd
+```
 
 #command line usage:
 
@@ -79,4 +88,5 @@ python ./convert.py -dir ../testdata -out_dir ../testdata -if csv -of json
     -h print: this message  
 
 ```
+
 
