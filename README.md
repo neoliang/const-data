@@ -19,6 +19,7 @@
     f. empty: empty type column will be int
 5. examples:
   id | 触发类型 | 触发id | 奖励 | 备注 | 其它
+  -------- | :------------: | :------------: | :------------------:| :------------------:| :------------------:
   id |trigger_type|trigger_id|reward|comment|extra
      |string|int|json|comment|float
   1 |piece|26|{"yellow":2}|泥土消除奖励|0
