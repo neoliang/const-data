@@ -20,7 +20,15 @@
 5. examples:
 
 
+
+
+
+
+
+
+
   id |trigger_type|trigger_id|reward|comment|extra
      |string|int|json|comment|float
   1 |piece|26|{"yellow":2}|泥土消除奖励|0
   2 |piece|27|{"diamond:1}|钻石消除奖励|10.5
+
