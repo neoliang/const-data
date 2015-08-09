@@ -38,3 +38,15 @@
   a. the type of id-column is int because it's empty
 
 # convert csv file to lua file
+
+```python
+#convert one csv file
+#in root dir 
+cd convert
+python ./convert_csv_to_lua.py -csv ../testdata/reward.csv -out_dir ../testdata
+
+#convert csv files in dir
+python ./convert_csv_to_lua.py -dir ../testdata -out_dir ../testdata
+
+```
+
