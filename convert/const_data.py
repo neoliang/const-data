@@ -3,9 +3,10 @@ import json
 import os
 import shutil
 import string
-import sys
 import json
 import types
+import sys
+
 
 def get_data_desc(data_reader):
 	dic = []

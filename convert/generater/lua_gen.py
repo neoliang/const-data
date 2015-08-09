@@ -1,13 +1,9 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-import json
 import types
-import json
 import os
 import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
-print sys.getdefaultencoding()
+
 def space_str(layer):
 	spaces = ""
 	for i in range(0,layer):
@@ -66,7 +62,7 @@ def dic_to_lua_str(data,layer=0):
 	else:
 		raise d_type , 'is error'
 def file_ext():
-	return 'lua'
+	return '.lua'
 def create_gen(callback):
 	def gen(data_dic,data_name):
 		luastr = ''

@@ -43,10 +43,22 @@
 #convert one csv file
 #in root dir 
 cd convert
-python ./convert_csv_to_lua.py -csv ../testdata/reward.csv -out_dir ../testdata
+python ./convert.py -file ../testdata/reward.csv -out_dir ../testdata -if csv -of lua
 
 #convert csv files in dir
-python ./convert_csv_to_lua.py -dir ../testdata -out_dir ../testdata
+python ./convert.py -dir ../testdata -out_dir ../testdata -if csv -of lua
 
 ```
 
+# convert csv file to json file
+
+```python
+#convert one csv file
+#in root dir 
+cd convert
+python ./convert.py -file ../testdata/reward.csv -out_dir ../testdata -if csv -of json
+
+#convert csv files in dir
+python ./convert.py -dir ../testdata -out_dir ../testdata -if csv -of json
+
+```
