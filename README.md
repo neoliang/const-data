@@ -19,6 +19,13 @@
     f. empty: empty type column will be int
 5. examples:
 
+
+
+
+
+
+
+
   id | 触发类型 | 触发id | 奖励 | 备注 | 其它
   -------- | :------------: | :------------: | :------------------:| :------------------:| :------------------:
   id |trigger_type|trigger_id|reward|comment|extra
@@ -26,3 +33,7 @@
   1 |piece|26|{"yellow":2}|泥土消除奖励|0
   2 |piece|27|{"diamond:1}|钻石消除奖励|10.5
 
+Latest builds:
+
+Channel  | Core Framework | DNX Runner | Visual Studio Runner
+-------- | :------------: | :------------: | :------------------:
