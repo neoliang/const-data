@@ -11,12 +11,19 @@
 2. the first rows describes data which will be ignored in converting
 3. the second row describes data name in this column
 4. the third row describes data type in this column: validate values are:
+
     a. int
+
     b. float
+    
     c. string
+    
     d. json
+    
     e. comment: the comment type of column will be ignored in converting
+    
     f. empty: empty type column will be int
+
 5. examples:
 
 
