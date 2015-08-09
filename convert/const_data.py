@@ -66,6 +66,8 @@ def get_data_dic_for_row(row,dataDesc):
 			else:
 				data = True
 		elif data_desc['type'] == 'float':
+			if data == '':
+				data = 0
 			data = float(data)
 		elif data_desc['type'] == 'comment':
 			continue
