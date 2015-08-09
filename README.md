@@ -22,7 +22,7 @@
     
     e. comment: the comment type of column will be ignored in converting
     
-    f. empty: empty type column will be int
+    f. empty: the type of column of empty type  will be int
 
 5. examples:
 
@@ -34,3 +34,7 @@
   1 |piece|26|{"yellow":2}|泥土消除奖励|0
   2 |piece|27|{"diamond:1}|钻石消除奖励|10.5
 
+
+  a. the type of id-column is int because it's empty
+
+# convert csv file to lua file
