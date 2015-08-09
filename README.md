@@ -27,7 +27,3 @@
   1 |piece|26|{"yellow":2}|泥土消除奖励|0
   2 |piece|27|{"diamond:1}|钻石消除奖励|10.5
 
-Latest builds:
-
-Channel  | Core Framework | DNX Runner | Visual Studio Runner
--------- | :------------: | :------------: | :------------------:
