@@ -10,7 +10,7 @@
 1. the first three rows are fixed
 2. the first rows describes data which will be ignored in converting
 3. the second row describes data name in this column
-4. the third row describes data type in this column: validate values are:
+4. the third row describes data type in this column: validate types are:
 
     a. int
 

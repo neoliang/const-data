@@ -65,6 +65,8 @@ def dic_to_lua_str(data,layer=0):
 		yield ('}')
 	else:
 		raise d_type , 'is error'
+def file_ext():
+	return 'lua'
 def create_gen(callback):
 	def gen(data_dic,data_name):
 		luastr = ''
