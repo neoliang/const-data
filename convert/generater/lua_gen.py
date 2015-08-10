@@ -65,7 +65,7 @@ def file_ext():
 	return '.lua'
 def create_gen(callback):
 	def gen(data_dic,data_name):
-		luastr = ''
+		luastr = 'return '
 		for it in dic_to_lua_str(data_dic):
 			luastr += it
 		callback(luastr,data_name)
