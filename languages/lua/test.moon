@@ -12,3 +12,9 @@ describe 'test const data',->
 	it 'get reward_excel',->
 		assert.is_truthy(constData.get_table('reward_excel'))
 		assert.is_truthy(constData.get_hash_table('reward_excel'))
+
+	it 'find',->
+		ls = constData.find 'reward',(r)-> r.trigger_type == 'piece'
+		assert.are.equal(type(ls),'table')
+		ls = constData.find 'reward',()->false
+		assert.are.equal(#ls,0)
