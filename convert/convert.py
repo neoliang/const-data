@@ -68,9 +68,12 @@ for x in range(0,argn):
 			output_format = arg
 
 src_dir = os.path.dirname( os.path.realpath(__file__) )
-#try:
-reader = data_reader.reader[input_format].create_data_tables
-input_file_ext = data_reader.reader[input_format].file_ext()
+try:
+	reader = data_reader.reader[input_format].create_data_tables
+	input_file_ext = data_reader.reader[input_format].file_ext()
+except Exception, e:
+	print e
+	print_help()
 out_gen = generater.language[output_format]
 if csv_file != None:
 	csv_file = os.path.join(src_dir,csv_file)
@@ -84,5 +87,4 @@ elif csv_dir != None:
 	convert_dirs(csv_dir,out_dir,reader,out_gen,input_file_ext)
 else:
 	raise Exception("")
-# except Exception, e:
-# 	print e
+
