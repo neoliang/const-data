@@ -95,9 +95,9 @@ reading code are in languages dir
 
 #lua reading
 
-1.the reading interface is constData.lua which dependent to load.lua
-
-2.test.moon is used for testing constData,to run the test you must install [busted](http://olivinelabs.com/busted) framework
+1. the reading codes are in languages/lua dir
+2. the reading interface is constData.lua which dependent to load.lua
+3. test.moon is used for testing constData,to run the test you must install [busted](http://olivinelabs.com/busted) framework
 
 lua reading examples:
 ```lua
