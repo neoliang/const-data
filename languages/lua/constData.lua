@@ -3,14 +3,14 @@
 local _data_dir = ''
 local _name_to_tables = {}
 local _name_to_hash_tables = {}
-
+local load = require 'load'
 
 local function load_table( tName )
 	local ct = _name_to_tables[tName]	
 	if ct then
 		return ct
 	end
-	ct = require(_data_dir ..  tName .. '.lua' )
+	ct = load.load(_data_dir ..  tName .. '.lua' )
 	assert(ct)
 	_name_to_tables[tName] = ct
 	if #ct > 0 and ct[1].id ~= nil then
@@ -95,5 +95,6 @@ return{
 	get_hash_table = get_hash_table,
 	set_data_dir = set_data_dir,
 	reload_table = reload_table,
-	reload_all = reload_all
+	reload_all = reload_all,
+	load_table = load_table
 }

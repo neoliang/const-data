@@ -1,4 +1,4 @@
-{
+return {
 	
 	{
 		extra = 0.0,
