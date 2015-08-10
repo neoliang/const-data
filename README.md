@@ -89,4 +89,35 @@ pip install xlrd
 
 ```
 
+#reading code:
+
+reading code are in languages dir
+
+#lua reading
+
+1.the reading interface is constData.lua which dependent to load.lua
+
+2.test.moon is used for testing constData,to run the test you must install [busted](http://olivinelabs.com/busted) framework
+
+lua reading examples:
+```lua
+local constData = require 'constData'
+constData.set_data_dir('../../testdata/')
+
+--find records 
+local ls = constData.find('reward',function(r) return r.trigger_type == 'piece' end)
+for _,r in ipairs(ls) do
+  print(r)
+end
+
+--find one, return nil or record
+local record = constData.find_one('reward',function(r)return r.trigger_type == 'piece' end)
+print(record)
+
+--find by id return nil or record
+local record = constData.find_by_id('reward',1)
+print(record)
+```
+
+
 
