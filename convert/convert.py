@@ -42,7 +42,7 @@ def print_help():
 		-dir: 	  convert files in dir
 		-file: 	  convert file
 		-out_dir: the dir of output files
-		-h print: this message
+		-h： 	print this message
 		-comment:  true or false, default false, true will convert commnet 	
 	'''
 csv_file = None
@@ -76,8 +76,8 @@ try:
 	reader = data_reader.reader[input_format].create_data_tables
 	input_file_ext = data_reader.reader[input_format].file_ext()
 except Exception, e:
-	print e
 	print_help()
+	sys.exit(0)
 out_gen = generater.language[output_format]
 if csv_file != None:
 	csv_file = os.path.join(src_dir,csv_file)
