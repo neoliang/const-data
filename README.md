@@ -86,7 +86,7 @@ pip install xlrd
     -file:    convert file
     -out_dir: the dir of output files
     -comment:  true or false, the default value is false, true will convert the commnet type of column  
-    -h print: this message  
+    -h : print this message  
 
 ```
 
