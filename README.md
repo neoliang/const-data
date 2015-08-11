@@ -65,7 +65,7 @@ python ./convert.py -dir ../testdata -out_dir ../testdata -if csv -of json
 
 #converting excel to other files
 
-1.the command line is almost same as convert csv excpe the option -if is excel
+1.the command line is almost same as convert csv excpet the option -if is "excel"
 
 2.you must install xlrd using pip as following:
 
