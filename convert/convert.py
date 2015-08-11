@@ -42,7 +42,8 @@ def print_help():
 		-dir: 	  convert files in dir
 		-file: 	  convert file
 		-out_dir: the dir of output files
-		-h print: this message 	
+		-h print: this message
+		-comment:  true or false, default false, true will convert commnet 	
 	'''
 csv_file = None
 csv_dir = None
@@ -66,6 +67,9 @@ for x in range(0,argn):
 			input_format = arg
 		if sys.argv[x] == '-of':
 			output_format = arg
+		if sys.argv[x] == '-comment':
+			if arg.lower() == 'true':
+				const_data.ignore_comment = False
 
 src_dir = os.path.dirname( os.path.realpath(__file__) )
 try:

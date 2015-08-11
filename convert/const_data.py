@@ -7,7 +7,7 @@ import json
 import types
 import sys
 
-
+ignore_comment = True
 def get_data_desc(data_tables):
 	if len(data_tables) < 3:
 		raise Exception("data error")
@@ -63,7 +63,10 @@ def get_data_dic_for_row(row,dataDesc):
 				data = 0
 			data = float(data)
 		elif data_desc['type'] == 'comment':
-			continue
+			if ignore_comment:
+				continue
+			else:
+				data = str(data)
 		else:
 			if data == '':
 				data = 0
